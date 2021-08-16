@@ -1,0 +1,19 @@
+# -*- coding: utf-8 -*-
+
+class Solution:
+    def rangeSumBST(self, root: TreeNode, low: int, high: int) -> int:
+        if not root:
+            return 0
+        sums = 0
+        def helper(sums, root, low, high):
+            if root.val >= low and root.val <= high:
+                sums += root.val
+                return sums
+            else:
+                sums += 0
+                return sums
+
+
+        helper(sums, root.left, low, high)
+        helper(sums, root.right, low, high)
+        return sums
