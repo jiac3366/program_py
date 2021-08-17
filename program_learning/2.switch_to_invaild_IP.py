@@ -16,4 +16,8 @@ def func2(string):
 
 
 if __name__ == '__main__':
-    print(func2("192.168.33.44"))
+    # print(func2("192.168.33.44"))
+    dicts = {"1": 2, "3": 66}
+    for value, key in enumerate(dicts):
+        print(value, key)
+    print("3" in dicts)
