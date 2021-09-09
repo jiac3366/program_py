@@ -1,8 +1,7 @@
-def howlong(a, *other):
-    print(len(other))
-    print(other)
-    print(other[0])
-    print(other[1])
+def howlong(a=None, **kw):
+
+    print(kw)
+
 
 if __name__ == '__main__':
-    howlong(1, 3 ,43 ,43, 32, 32)
+    howlong('/web/view/edit_custom', type='json', auth="user")

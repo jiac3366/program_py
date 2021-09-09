@@ -10,7 +10,6 @@ def compute(func):
         start = time.time()
         func(*args, **kwargs)
         end = time.time()
-        print("my decorator")
         print("operate time is " + str(end - start))
     return wrapper
 
