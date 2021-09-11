@@ -4,6 +4,7 @@ import threading
 from threading import Thread
 
 mlocal = threading.local()
+
 # 设置一个成员变量   (主线程、子线程可以分别使用自己局部变量)
 mlocal.content = "中国深圳"
 

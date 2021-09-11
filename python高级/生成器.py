@@ -4,7 +4,8 @@ def gen_fib(index):
     a, b = 0, 1
     while count < index:
         yield b
-        a, b = b, a + b
+        a = b,
+        b = a + b
         count += 1
 
 

@@ -43,7 +43,7 @@ def get_product_url(queue):
 
 if __name__ == '__main__':
     start = time.time()
-    url_queue = Queue(maxsize=1000)
+    url_queue = Queue(maxsize=100)
     # 爬取列表线程
     p1 = Thread(target=get_product_url, args=(url_queue,))
     p1.start()

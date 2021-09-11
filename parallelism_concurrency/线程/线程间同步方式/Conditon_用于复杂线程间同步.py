@@ -9,5 +9,4 @@
 # Condition源码：
 # wait()会释放Condition的底层锁 eg:天猫wait() 使得小爱能够执行'with condition:'语句
 # 而又会创建一把上层锁 放入deque，每当notify()执行一次，就释放一把deque里面的锁 让其他调用了wait()操作的线程进一步执行
-
 # 进一步了解Condition 请看Semaphores和Queue相关的源码

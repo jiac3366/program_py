@@ -1,5 +1,5 @@
 import collections
-from tree import create_tree
+from ds.tree import create_tree
 
 
 class Solution(object):
