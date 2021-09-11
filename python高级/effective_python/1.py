@@ -3,6 +3,7 @@
 a = [i for i in range(1, 11)]
 b = [x for x in a if x > 4 if x % 2 == 0]  # 默认if的关系是and
 
+
 # 30
 def index_of_word(text):
     if text:
@@ -66,4 +67,3 @@ if __name__ == '__main__':
             with open(self.data_path) as f:
                 for line in f:
                     yield int(line)
-
