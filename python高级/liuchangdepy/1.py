@@ -1,6 +1,6 @@
 import collections
 
-a = collections.namedtuple('Card', ['rank', 'suit'])  # 创建一个带rank、suit的Card类
+a = collections.namedtuple('Card', ['rank', 'suit'])  # 创建一个带rank、suit属性的Card类
 
 
 class FrenchDeck:
