@@ -2,7 +2,6 @@
 
 
 if __name__ == '__main__':
-    st = []
-    st.append(1)
-    st.append(2)
-    pass
+    item = [1, 2, 3]
+    item.extend(([4,5,65]))
+    print(item)
