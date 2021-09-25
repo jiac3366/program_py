@@ -2,7 +2,7 @@
 
 
 if __name__ == '__main__':
-    st = []
-    st.append(1)
-    st.append(2)
-    pass
+    item = ["i", "have", "an", "apple", "he", "have", "a"]
+    item = sorted(item)
+    print(item[0] < item[5])
+    print(item)
