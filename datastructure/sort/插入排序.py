@@ -27,7 +27,22 @@ def insert_sort(alist):
     print(alist)
 
 
+def try_angin(arr):
+    for i in range(1, len(arr)):  # 要进来排队的人
+        j = i - 1  # 在队伍里面的人（比身高排队）
+        insert_val = arr[i]
+        while j >= 0:
+            if arr[j] > insert_val:
+                arr[j + 1] = arr[j]
+            else:
+                arr[j + 1] = insert_val
+                break
+            j -= 1
+    print(arr)
+
+
 if __name__ == '__main__':
-    lists = [4, 5, 6, 1, 3, 2]
-    insertSort(lists)
-    insert_sort(lists)
+    lists = [3,1,5]
+    # insertSort(lists)
+    # insert_sort(lists)
+    try_angin(lists)
