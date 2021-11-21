@@ -10,6 +10,7 @@ def paopao_sort(list=[]):
                 list[i] = temp
 
 
+
 if __name__ == '__main__':
     list_num = []
     for i in range(10):

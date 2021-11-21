@@ -36,6 +36,14 @@ def quick_sort(lists):
         # return quick_sort(small_list) + [funda] + quick_sort(large_list)
 
 
+def quick_sort_r(n, p, r):
+    pass
+
+
+def try_again_quick_sort(n):
+    quick_sort_r(n, 0, len(n)-1)
+
+
 if __name__ == '__main__':
     sys.setrecursionlimit(150000)
     list_num = []

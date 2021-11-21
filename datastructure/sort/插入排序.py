@@ -35,9 +35,11 @@ def try_angin(arr):
             if arr[j] > insert_val:
                 arr[j + 1] = arr[j]
             else:
-                arr[j + 1] = insert_val
+
                 break
             j -= 1
+
+        arr[j + 1] = insert_val
     print(arr)
 
 
