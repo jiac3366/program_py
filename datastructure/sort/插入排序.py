@@ -44,7 +44,6 @@ def try_angin(arr):
 
 
 if __name__ == '__main__':
-    lists = [3,1,5]
-    # insertSort(lists)
-    # insert_sort(lists)
-    try_angin(lists)
+    lists = [4, 5, 6, 1, 3, 2]
+    insertSort(lists)
+    insert_sort(lists)

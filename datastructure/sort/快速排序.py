@@ -36,12 +36,36 @@ def quick_sort(lists):
         # return quick_sort(small_list) + [funda] + quick_sort(large_list)
 
 
-def quick_sort_r(n, p, r):
-    pass
+# def quick_sort(lists=[1, 5, 6, 2, 3, 4]):
+def quick_sort_new(lists):
+    quick_r(lists, 0, len(lists) - 1)
+    return lists
 
 
-def try_again_quick_sort(n):
-    quick_sort_r(n, 0, len(n)-1)
+def part(lists, p, r):
+    i = p
+    j = p
+    while j < r:
+        if lists[j] < lists[r]:
+            swap(lists, i, j)
+            i += 1
+        j += 1
+    swap(lists, i, j)
+    return i
+
+
+def swap(lists, i, j):
+    tmp = lists[i]
+    lists[i] = lists[j]
+    lists[j] = tmp
+
+
+def quick_r(lists, p, r):
+    if p >= r:
+        return
+    q = part(lists, p, r)
+    quick_r(lists, p, q - 1)
+    quick_r(lists, q + 1, r)
 
 
 if __name__ == '__main__':

@@ -18,13 +18,17 @@ class Company:
 
 if __name__ == '__main__':
     # 一些都是对象
-    print(type(int))  # <class 'type'>
-    print(Company.__bases__)  # (<class 'object'>,)
-    print(type(object))  # <class 'type'>
-    print(type(type))  # <class 'type'>
+    # print(type(int))  # <class 'type'>
+    # print(Company.__bases__)  # (<class 'object'>,)
+    # print(type(object))  # <class 'type'>
+    # print(type(type))  # <class 'type'>
     c = Company(["jj", "xiaoying", "ayuan"])
-    print(type(Company))  # <class 'type'>
+    # print(type(Company))  # <class 'type'>
     # __str__
     print(c)
     # __repr__
     print(repr(c))
+    print(len(c))
+    print(c[1])
+
+

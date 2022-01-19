@@ -34,3 +34,30 @@ if __name__ == '__main__':
             data = future.result()
             print("result is {}".format(data))
         print("time:", time.time() - start)
+
+
+
+        # 加入异常处理
+        # def download_all(sites):
+        #     with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
+        #         to_do = {}
+        #         for site in sites:
+        #             future = executor.submit(download_one, site)
+        #             to_do[future] = site
+        #
+        #         for future in concurrent.futures.as_completed(to_do):
+        #             try：
+        #             res = future.result()
+        #         except request.exceptions.HTTPError as e:
+        #         e_msg =‘HTTP
+        #         erro’
+        #         except request.exceptions.ConnectionError as e:
+        #         e_msg =‘Connection
+        #         erro’
+        #         else:
+        #         e_msg = ''
+        #     if e_msg:
+        #         site = to_do[future]
+        #         Print(‘Error is {}
+        #         from
+        #         {}’.format(e_

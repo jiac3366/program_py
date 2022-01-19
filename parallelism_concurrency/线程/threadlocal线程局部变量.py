@@ -19,4 +19,5 @@ def work():
 if __name__ == '__main__':
     thread = Thread(target=work)
     thread.start()
+    thread.join()
     print("主线程中内容:", mlocal.content)

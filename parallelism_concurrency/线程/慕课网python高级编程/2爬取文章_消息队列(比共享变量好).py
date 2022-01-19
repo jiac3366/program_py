@@ -58,7 +58,8 @@ if __name__ == '__main__':
     #     item.join(timeout=2)
 
     # task_done() 会使得join退出 eg:爬完1000条调用task_done 主线程才能退出
-    url_queue.join()
     url_queue.task_done()
+    url_queue.join()
+
 
     print(time.time() - start)

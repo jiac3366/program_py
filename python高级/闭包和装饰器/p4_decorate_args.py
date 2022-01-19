@@ -1,9 +1,11 @@
 # 装饰器带参数 
 from time import ctime, sleep
-
+import functools
 
 def outer_arg(bar):
     def outer(func):
+        print(func.__name__)
+        @functools.wraps(func)
         def inner(*args, **kwargs):
             print("%s called at %s" % (func.__name__, ctime()))
             ret = func(*args, **kwargs)
@@ -19,10 +21,11 @@ def outer_arg(bar):
 # 而不是outer_arg('foo_arg')(foo())
 @outer_arg('foo_arg')
 def foo(a, b, c):
-    return (a + b + c)
+    return a + b + c
 
 
 print(foo(1, 3, 5))
+print(foo.__name__)
 
 
 ############################################
