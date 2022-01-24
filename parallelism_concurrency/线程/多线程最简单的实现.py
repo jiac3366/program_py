@@ -11,4 +11,4 @@ def get_source(path):
 
 path_list = ['1', '2', '3']
 pool = Pool(10)
-pool.map()
+pool.map(get_source, path)
