@@ -14,7 +14,9 @@ class Count:
 def example():
     print("hello world")
 
-example()
+if __name__ == '__main__':
+    example()
+    pass
 
 # # 输出
 # num of calls is: 1

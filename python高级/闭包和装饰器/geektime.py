@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import functools
 
+
 def decorate(func):
     def wrapper(*args, **kwargs):
         print('==========2========')
@@ -25,7 +26,21 @@ def repeat(num):
     return decorate
 
 
-@decorate
+# 自己尝试！
+def decorate_outer(num):
+    def decorate_simple(func):
+        @functools.wraps(func)
+        def wrapper(*args, **kwargs):
+            for _ in range(num):
+                print('sb——prefix')
+            func(*args, **kwargs)
+
+        return wrapper
+
+    return decorate_simple
+
+
+@decorate_outer(3)
 def hello(name):
     print('say,hello', name)
 
@@ -43,4 +58,6 @@ def hello3(name, yes):
 
 
 if __name__ == '__main__':
-    decorate(hello)
+    # decorate(hello)
+    hello('jiac')
+    print("func name:", hello.__name__)
