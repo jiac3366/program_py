@@ -22,7 +22,7 @@ if __name__ == '__main__':
 # num of calls is: 1
 # hello world
 #
-# example()
+    example()
 #
 # # 输出
 # num of calls is: 2
