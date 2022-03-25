@@ -28,7 +28,7 @@ def io_sleep(num):
 if __name__ == '__main__':
     with ThreadPoolExecutor(3) as executor:
         # all_task = [executor.submit(fib, (num)) for num in range(25, 40)]
-        all_task = [executor.submit(io_sleep, (num)) for num in [2] * 30]
+        all_task = [executor.submit(io_sleep, num) for num in [2] * 30]
         start = time.time()
         for future in as_completed(all_task):
             data = future.result()
