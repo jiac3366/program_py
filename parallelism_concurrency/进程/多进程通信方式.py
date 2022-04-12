@@ -12,5 +12,5 @@ from multiprocessing import Pool
 # 通信方式：
 # 管道：Pipe()
 # 消息队列：进程池：Manager().Queue()；普通进程：multiprocessing的Queue
-# 共享内存（信号量）：Manager().dict()...有很多常见的数据结构  用法和线程间的同步一样
+# 共享内存：Manager().dict()...有很多常见的数据结构  用法和线程间的同步一样
 

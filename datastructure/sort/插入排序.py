@@ -42,8 +42,21 @@ def try_angin(arr):
         arr[j + 1] = insert_val
     print(arr)
 
+def try_agin2(A):
+    x = 1
+    while x < len(A):
+        y = x - 1
+        insert_num = A[x]
+        while y >= 0 and insert_num < A[y]:
+            A[y+1] = A[y]
+            y -= 1
+        A[y+1] = insert_num
+        x += 1
+    return A
+
+
 
 if __name__ == '__main__':
     lists = [4, 5, 6, 1, 3, 2]
-    insertSort(lists)
-    insert_sort(lists)
+    print(try_agin2(lists))
+    # insert_sort(lists)

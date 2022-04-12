@@ -22,7 +22,7 @@ class Solution(object):
         # write code here 更简洁
         a = 1
         b = 2
-        for i in range(n):
+        for i in range(n-2):
             a, b = b, a + b
             yield b
             print(b)
