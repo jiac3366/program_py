@@ -2,6 +2,7 @@
 .vscode/
 __pycache__/
 /resource/
+/handler/
 /面试/
 /蓝桥杯/
 /牛客网/
