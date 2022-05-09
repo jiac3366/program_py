@@ -26,18 +26,20 @@ print(l1 == l2)
 # True
 print(l1 is l2)
 # False
-print(l1 == l3)
-# True
 print(l1 is l3)
 # False
 # ----------------------------------
 print("set")
 s1 = set([1, 2, 3])
 s2 = set(s1)
+s3 = copy.deepcopy(s1)
 # s2:{1, 2, 3}
 print(s1 == s2)
 # True
 print(s1 is s2)
+# False
+
+print(s1 is s3)
 # False
 # ----------------------------------
 print("tuple")
@@ -48,15 +50,13 @@ print(t1 == t2)
 # True
 print(t1 is t2)
 # True
-print(t1 == t3)
-# True
 print(t1 is t3)
 # True
 # ----------------------------------
 print("str")
 s1 = "123"
 s2 = str(s1)
-
+s3 = copy.deepcopy(s1)
 # 如果内容相等时 s1和s2指向相同的内存
 # 当对s2进行修改时 就会申请2块不同的内存了
 # s2 = s2+'22'
@@ -66,6 +66,12 @@ print(s1 == s2)
 # True
 print(s1 is s2)
 # True
+print(s1 is s3)
+# True
+s4 = s1 + "1"
+s5 = s4[:len(s4)-1]
+print(s1 is s5)
+# False 不可变类型 修改的时候会重新开辟内存 变量的引用指向这块地址
 # ----------------------------------
 print("num")
 n1 = 1
