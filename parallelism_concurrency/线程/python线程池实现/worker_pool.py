@@ -1,8 +1,35 @@
 import psutil
-from task import Task
+
+
 from safe_queue import SafeQueue
-from worker import Worker
-import time
+import threading
+from main import Task
+
+
+class NotTaskInstanceException(Exception):
+    pass
+
+
+class Worker(threading.Thread):
+    def __init__(self, queue):
+        super(Worker, self).__init__()
+        self.queue = queue  # 任务队列
+        self.stop_event = threading.Event()
+
+    def run(self) -> None:
+        while True:
+            # 变量默认为False 当为True时 说明线程被通知停止
+            # 注意 不能直接这样判断：if self.stop_event，而是要判断event里面的flag
+            if self.stop_event.is_set():
+                break
+            task = self.queue.dequeue()
+            if not isinstance(task, Task):
+                raise NotTaskInstanceException
+            # 为什么要加* **
+            task.callable(*task.args, **task.kwargs)
+
+    def stop(self):
+        self.stop_event.set()
 
 
 class ThreadPool:
@@ -16,7 +43,8 @@ class ThreadPool:
         self.pool = SafeQueue(size)
 
         for i in range(size):
-            self.pool.enqueue(Worker(self.work_queue))
+            worker = Worker(self.work_queue)
+            self.pool.enqueue(worker)
 
     def start(self):
         for thread in self.pool:
@@ -29,10 +57,6 @@ class ThreadPool:
             thread = self.pool.dequeue()
             thread.join()
 
-
-
-
-
     def put(self, item):
         if not isinstance(item, Task):
             raise TaskTypeErrorException()
@@ -43,17 +67,3 @@ class TaskTypeErrorException(Exception):
     pass
 
 
-def process():
-    time.sleep(1)
-    print('This is a SimpleTask callable function 1.')
-
-
-
-if __name__ == '__main__':
-    pool = ThreadPool(5)
-    pool.start()
-    for i in range(20):
-        simple_task = Task(process)
-        pool.put(simple_task)
-    pool.join()
-    print('任务处理结束')

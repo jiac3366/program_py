@@ -1,7 +1,6 @@
 import threading
 
 
-
 class SafeQueue:
     """2022.1.24新东西：
     1、如果为了方便弄2个信号量not_full和not_empty，前提是他们都得传入同一个lock
@@ -44,7 +43,6 @@ class SafeQueue:
         return n
 
 
-#
 class QueueItorator:
     def __init__(self, queue):
         self.queue = queue
