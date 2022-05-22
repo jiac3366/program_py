@@ -80,4 +80,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main2()  # coding=utf-8
+    main()  # coding=utf-8

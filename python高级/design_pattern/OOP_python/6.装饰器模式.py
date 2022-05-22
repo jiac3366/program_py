@@ -19,6 +19,7 @@ class Foo_decorator(object):
     def __getattr__(self, name):
         return getattr(self._decoratee, name)
 
+
 u = Foo()
 v = Foo_decorator(u)
 v.f1()
@@ -30,14 +31,19 @@ v.f2()
 
 def decorator(func):
     def _inner(*args, **kwargs):
-        print '在前面加点东西'
+        print
+        '在前面加点东西'
         func(*args, **kwargs)
-        print '在后面加点东西'
+        print
+        '在后面加点东西'
+
     return _inner
 
 
 @decorator
 def f1(a):
-    print a
+    print
+    a
+
 
 f1(5)

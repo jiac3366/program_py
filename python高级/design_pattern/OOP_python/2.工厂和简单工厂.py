@@ -17,6 +17,8 @@ class DanceFactory:
     def start_dance(self, method):
         if method == 'popping':
             return Popping()
+        if method == "hiphop":
+            return HipHop()
 
 
 # 工厂模式

@@ -229,3 +229,7 @@ public class Collections {
   }
 }
 
+// 5、适配不同格式的数据
+
+List<String> stooges = Arrays.asList("Larry", "Moe", "Curly");
+
