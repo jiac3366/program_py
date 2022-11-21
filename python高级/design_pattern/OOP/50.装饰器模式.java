@@ -51,49 +51,10 @@ public class DataInputStream extends InputStream {
 }
 
 // =======================================================
-
-
-// 代理模式的代码结构(下面的接口也可以替换成抽象类)
-public interface IA {
-  void f();
-}
-public class A impelements IA {
-  public void f() { //... }
-}
-public class AProxy implements IA {
-  private IA a;
-  public AProxy(IA a) {
-    this.a = a;
-  }
-
-  public void f() {
-    // 新添加的代理逻辑
-    a.f();
-    // 新添加的代理逻辑
-  }
-}
-
-// 装饰器模式的代码结构(下面的接口也可以替换成抽象类)
-public interface IA {
-  void f();
-}
-public class A implements IA {
-  public void f() { //... }
-}
-public class ADecorator implements IA {
-  private IA a;
-  public ADecorator(IA a) {
-    this.a = a;
-  }
-
-  public void f() {
-    // 功能增强代码
-    a.f();
-    // 功能增强代码
-  }
-}
-
-
+// BufferedInputStream、DataInputStream 并非继承自 InputStream，而是另外一个叫 FilterInputStream 的类
+//InputStream 是一个抽象类而非接口，而且它的大部分函数（比如 read()、available()）都有默认实现，
+//按理来说，我们只需要在 BufferedInputStream 类中重新实现那些需要增加缓存功能的函数就可以了，其他函数继承 InputStream 的默认实现。
+// 但实际上，这样做是行不通的: mubu
 public class FilterInputStream extends InputStream {
   protected volatile InputStream in;
 

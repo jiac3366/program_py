@@ -101,7 +101,7 @@ public class Sorter {
 
 
 // 上面的代码还可以继续优化。每种排序类都是无状态的，我们没必要在每次使用的时候，都重新创建一个新的对象。
-// 所以，我们可以使用工厂模式对对象的创建进行封装。按照这个思路，我们对代码进行重构
+// 所以，我们可以使用工厂模式对对象的创建进行封装。按照这个思路，我们对代码进行重构(个人推荐这种)
 
 public class SortAlgFactory {
   private static final Map<String, ISortAlg> algs = new HashMap<>();
@@ -144,6 +144,7 @@ public class Sorter {
 
 
 // 如果你特别想将 if-else 分支判断移除掉，那也是有办法的。我直接给出代码，你一看就能明白。实际上，这也是基于查表法来解决的，其中的“algs”就是“表”
+// 太极端啦
 public class Sorter {
   private static final long GB = 1000 * 1000 * 1000;
   private static final List<AlgRange> algs = new ArrayList<>();

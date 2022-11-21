@@ -102,13 +102,14 @@ class Waiter:
         # 实例属性最好写在__init__里面，哪怕属性不是在初始化时候绑定或者建立，也有写个None
         # 声明一下属性，否则直接在普通方法生成一个实例属性，不符合pycharm的pep8。
 
+    # build()方法
     def construct_pizza(self, builder):
         self.builder = builder
         # 按照一定顺序建造
         [step() for step in (builder.prepare_dough,
                              builder.add_sauce, builder.add_topping, builder.bake)]
 
-    # 如果没有property 就要显示地把self.pizza = self.builder.pizza
+    # 最终要的是builder建好的pizza
     @property
     def pizza(self):
         return self.builder.pizza

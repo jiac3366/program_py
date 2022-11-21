@@ -147,6 +147,7 @@ public class DiscountStrategyFactory {
 
   public static DiscountStrategy getDiscountStrategy(OrderType type) {
     return strategies.get(type);
+
   }
 }
 
@@ -167,6 +168,7 @@ public class OrderService {
 
 // 如果业务场景需要每次都创建不同的策略对象,要用另外一种工厂类的实现方式
 // 这样相当于把原来的 if-else 分支逻辑，从 OrderService 类中转移到了工厂类中，实际上并没有真正将它移除
+// 但还是可以用查表法来实现，不需要查表了 工厂方法的形参直接传入class对象, 根据class对象反射生成实例就可以了.
 public class DiscountStrategyFactory {
   public static DiscountStrategy getDiscountStrategy(OrderType type) {
     if (type == null) {

@@ -39,7 +39,7 @@ public class ConcreteClass2 extends AbstractClass {
 AbstractClass demo = ConcreteClass1();
 demo.templateMethod();
 
-// ============================================================
+// ===================InputStream read() 函数是一个模板方法========================================
 
 public abstract class InputStream implements Closeable {
   //...省略其他代码...
@@ -85,4 +85,22 @@ public class ByteArrayInputStream extends InputStream {
   public synchronized int read() {
     return (pos < count) ? (buf[pos++] & 0xff) : -1;
   }
+}
+
+
+// =================================================================
+
+public boolean addAll(int index, Collection<? extends E> c) {
+    rangeCheckForAdd(index);
+    boolean modified = false;
+    for (E e : c) {
+        add(index++, e);
+        modified = true;
+    }
+    return modified;
+}
+
+// add() 是子类需要重写的方法，尽管没有声明为 abstract 的，但函数实现直接抛出了 UnsupportedOperationException 异常。如果子类不重写是不能使用的
+public void add(int index, E element) {
+    throw new UnsupportedOperationException();
 }

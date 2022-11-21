@@ -15,7 +15,7 @@ public class Ostrich implements Tweetable, EggLayable {//鸵鸟
   @Override
   public void layEgg() { //... }
 }
-public class Sparrow impelents Flyable, Tweetable, EggLayable {//麻雀
+public class Sparrow implements Flyable, Tweetable, EggLayable {//麻雀
   //... 省略其他属性和方法...
   @Override
   public void fly() { //... }
@@ -35,7 +35,7 @@ public class FlyAbility implements Flyable {
   @Override
   public void fly() { //... }
 }
-//省略Tweetable/TweetAbility/EggLayable/EggLayAbility
+//省略Tweetable/TweetAbility、EggLayable/EggLayAbility
 
 public class Ostrich implements Tweetable, EggLayable {//鸵鸟
   private TweetAbility tweetAbility = new TweetAbility(); //组合
